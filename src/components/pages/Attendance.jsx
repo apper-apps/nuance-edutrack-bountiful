@@ -43,10 +43,10 @@ const Attendance = () => {
       await attendanceService.updateByStudentAndDate(studentId, date, status);
       
       // Update local state
-      setAttendance(prev => {
+setAttendance(prev => {
         const dateStr = date;
         const existingIndex = prev.findIndex(a => 
-          a.studentId === studentId && 
+          a.student_id === studentId && 
           new Date(a.date).toISOString().split('T')[0] === dateStr
         );
 
@@ -59,8 +59,8 @@ const Attendance = () => {
           return updated;
         } else {
           return [...prev, {
-            Id: Math.max(...prev.map(a => a.Id)) + 1,
-            studentId,
+Id: Math.max(...prev.map(a => a.Id)) + 1,
+            student_id: studentId,
             date: new Date(date).toISOString(),
             status,
             reason: ""

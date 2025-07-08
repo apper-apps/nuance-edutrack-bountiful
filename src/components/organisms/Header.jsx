@@ -41,11 +41,26 @@ const Header = ({
             {actions}
           </div>
           
-          <Button variant="ghost" size="sm" className="relative">
+<Button variant="ghost" size="sm" className="relative">
             <ApperIcon name="Bell" className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 rounded-full flex items-center justify-center">
               <span className="text-xs font-medium text-white">3</span>
             </span>
+          </Button>
+          
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={() => {
+              const { AuthContext } = window;
+              const authMethods = React.useContext(AuthContext);
+              if (authMethods?.logout) {
+                authMethods.logout();
+              }
+            }}
+            className="text-gray-600 hover:text-red-600"
+          >
+            <ApperIcon name="LogOut" className="h-5 w-5" />
           </Button>
         </div>
       </div>

@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import Header from "@/components/organisms/Header";
+import ApperIcon from "@/components/ApperIcon";
 import StudentTable from "@/components/organisms/StudentTable";
 import StudentForm from "@/components/organisms/StudentForm";
-import Modal from "@/components/molecules/Modal";
-import Loading from "@/components/ui/Loading";
-import Error from "@/components/ui/Error";
-import Empty from "@/components/ui/Empty";
-import Button from "@/components/atoms/Button";
+import Header from "@/components/organisms/Header";
 import Badge from "@/components/atoms/Badge";
 import Select from "@/components/atoms/Select";
-import ApperIcon from "@/components/ApperIcon";
+import Button from "@/components/atoms/Button";
+import Empty from "@/components/ui/Empty";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import Grades from "@/components/pages/Grades";
+import Modal from "@/components/molecules/Modal";
 import { studentService } from "@/services/api/studentService";
 
 const Students = () => {
@@ -50,14 +51,14 @@ const Students = () => {
     let filtered = students;
 
     if (searchQuery) {
-      filtered = filtered.filter(student =>
-        student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+filtered = filtered.filter(student =>
+        student.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         student.email.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
     if (gradeFilter !== "all") {
-      filtered = filtered.filter(student => student.gradeLevel === parseInt(gradeFilter));
+filtered = filtered.filter(student => student.grade_level === parseInt(gradeFilter));
     }
 
     if (statusFilter !== "all") {
@@ -240,11 +241,11 @@ const Students = () => {
             <div className="flex items-center space-x-4">
               <div className="h-16 w-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
                 <span className="text-xl font-bold text-white">
-                  {selectedStudent.name.charAt(0)}
+{selectedStudent.Name.charAt(0)}
                 </span>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">{selectedStudent.name}</h3>
+<h3 className="text-lg font-semibold text-gray-900">{selectedStudent.Name}</h3>
                 <p className="text-gray-600">{selectedStudent.email}</p>
                 <Badge variant={selectedStudent.status === "active" ? "active" : "inactive"}>
                   {selectedStudent.status}
@@ -259,16 +260,16 @@ const Students = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Grade Level</label>
-                <p className="text-sm text-gray-900">Grade {selectedStudent.gradeLevel}</p>
+<p className="text-sm text-gray-900">Grade {selectedStudent.grade_level}</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Section</label>
                 <p className="text-sm text-gray-900">{selectedStudent.section}</p>
               </div>
-              <div>
+<div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Enrollment Date</label>
                 <p className="text-sm text-gray-900">
-                  {new Date(selectedStudent.enrollmentDate).toLocaleDateString()}
+                  {new Date(selectedStudent.enrollment_date).toLocaleDateString()}
                 </p>
               </div>
             </div>

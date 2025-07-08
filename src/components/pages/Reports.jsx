@@ -47,14 +47,14 @@ const Reports = () => {
   }, []);
 
   const getStudentGradeAverage = (studentId) => {
-    const studentGrades = reportData.grades.filter(g => g.studentId === studentId);
+const studentGrades = reportData.grades.filter(g => g.student_id === studentId);
     if (studentGrades.length === 0) return 0;
-    const total = studentGrades.reduce((sum, grade) => sum + (grade.score / grade.maxScore) * 100, 0);
+const total = studentGrades.reduce((sum, grade) => sum + (grade.score / grade.max_score) * 100, 0);
     return Math.round(total / studentGrades.length);
   };
 
-  const getStudentAttendanceRate = (studentId) => {
-    const studentAttendance = reportData.attendance.filter(a => a.studentId === studentId);
+const getStudentAttendanceRate = (studentId) => {
+    const studentAttendance = reportData.attendance.filter(a => a.student_id === studentId);
     if (studentAttendance.length === 0) return 0;
     const presentCount = studentAttendance.filter(a => a.status === "present").length;
     return Math.round((presentCount / studentAttendance.length) * 100);
@@ -87,14 +87,14 @@ const Reports = () => {
   };
 
   const filteredStudents = selectedGrade === "all" 
-    ? reportData.students 
-    : reportData.students.filter(s => s.gradeLevel === parseInt(selectedGrade));
+? reportData.students 
+    : reportData.students.filter(s => s.grade_level === parseInt(selectedGrade));
 
   const downloadReport = () => {
     // Mock download functionality
     const csvContent = "data:text/csv;charset=utf-8,Name,Grade,Average,Attendance\n" +
-      filteredStudents.map(student => 
-        `${student.name},${student.gradeLevel},${getStudentGradeAverage(student.Id)}%,${getStudentAttendanceRate(student.Id)}%`
+filteredStudents.map(student => 
+        `${student.Name},${student.grade_level},${getStudentGradeAverage(student.Id)}%,${getStudentAttendanceRate(student.Id)}%`
       ).join("\n");
     
     const encodedUri = encodeURI(csvContent);
@@ -282,14 +282,14 @@ const Reports = () => {
                   </thead>
                   <tbody>
                     {filteredStudents.map(student => {
-                      const average = getStudentGradeAverage(student.Id);
+const average = getStudentGradeAverage(student.Id);
                       const letterGrade = average >= 90 ? "A" : average >= 80 ? "B" : average >= 70 ? "C" : average >= 60 ? "D" : "F";
-                      const gradeCount = reportData.grades.filter(g => g.studentId === student.Id).length;
+                      const gradeCount = reportData.grades.filter(g => g.student_id === student.Id).length;
                       
                       return (
                         <tr key={student.Id} className="border-b border-gray-100">
-                          <td className="py-2">{student.name}</td>
-                          <td className="py-2">{student.gradeLevel}</td>
+<td className="py-2">{student.Name}</td>
+                          <td className="py-2">{student.grade_level}</td>
                           <td className="py-2">{average}%</td>
                           <td className="py-2">
                             <Badge variant={letterGrade === "A" ? "success" : letterGrade === "F" ? "error" : "primary"}>
@@ -324,16 +324,16 @@ const Reports = () => {
                   </thead>
                   <tbody>
                     {filteredStudents.map(student => {
-                      const attendanceRate = getStudentAttendanceRate(student.Id);
-                      const studentAttendance = reportData.attendance.filter(a => a.studentId === student.Id);
+const attendanceRate = getStudentAttendanceRate(student.Id);
+                      const studentAttendance = reportData.attendance.filter(a => a.student_id === student.Id);
                       const present = studentAttendance.filter(a => a.status === "present").length;
                       const absent = studentAttendance.filter(a => a.status === "absent").length;
                       const late = studentAttendance.filter(a => a.status === "late").length;
                       
                       return (
                         <tr key={student.Id} className="border-b border-gray-100">
-                          <td className="py-2">{student.name}</td>
-                          <td className="py-2">{student.gradeLevel}</td>
+<td className="py-2">{student.Name}</td>
+                          <td className="py-2">{student.grade_level}</td>
                           <td className="py-2">
                             <Badge variant={attendanceRate >= 90 ? "success" : attendanceRate >= 75 ? "warning" : "error"}>
                               {attendanceRate}%

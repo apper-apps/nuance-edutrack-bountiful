@@ -5,7 +5,7 @@ import FormField from "@/components/molecules/FormField";
 import { studentService } from "@/services/api/studentService";
 
 const StudentForm = ({ student, onSuccess, onCancel }) => {
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
@@ -18,13 +18,13 @@ const StudentForm = ({ student, onSuccess, onCancel }) => {
 
   useEffect(() => {
     if (student) {
-      setFormData({
-        name: student.name || "",
+setFormData({
+        name: student.Name || "",
         email: student.email || "",
         phone: student.phone || "",
-        gradeLevel: student.gradeLevel || "",
+        gradeLevel: student.grade_level || "",
         section: student.section || "",
-        enrollmentDate: student.enrollmentDate ? new Date(student.enrollmentDate).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
+        enrollmentDate: student.enrollment_date ? new Date(student.enrollment_date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
         status: student.status || "active"
       });
     }

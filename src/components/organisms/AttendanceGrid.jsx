@@ -17,8 +17,8 @@ const AttendanceGrid = ({ students, attendance, onUpdateAttendance, selectedDate
 
   const getAttendanceStatus = (studentId, date) => {
     const dateStr = format(date, "yyyy-MM-dd");
-    const record = attendance.find(a => 
-      a.studentId === studentId && 
+const record = attendance.find(a => 
+      a.student_id === studentId && 
       format(new Date(a.date), "yyyy-MM-dd") === dateStr
     );
     return record ? record.status : null;
@@ -39,7 +39,7 @@ const AttendanceGrid = ({ students, attendance, onUpdateAttendance, selectedDate
   };
 
   const getAttendancePercentage = (studentId) => {
-    const studentAttendance = attendance.filter(a => a.studentId === studentId);
+const studentAttendance = attendance.filter(a => a.student_id === studentId);
     const presentCount = studentAttendance.filter(a => a.status === "present").length;
     const totalCount = studentAttendance.length;
     return totalCount > 0 ? Math.round((presentCount / totalCount) * 100) : 0;
@@ -106,13 +106,13 @@ const AttendanceGrid = ({ students, attendance, onUpdateAttendance, selectedDate
                     <div className="h-8 w-8 flex-shrink-0">
                       <div className="h-8 w-8 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
                         <span className="text-xs font-medium text-white">
-                          {student.name.charAt(0)}
+{student.Name.charAt(0)}
                         </span>
                       </div>
                     </div>
                     <div className="ml-3">
-                      <div className="text-sm font-medium text-gray-900">{student.name}</div>
-                      <div className="text-xs text-gray-500">Grade {student.gradeLevel}</div>
+<div className="text-sm font-medium text-gray-900">{student.Name}</div>
+                      <div className="text-xs text-gray-500">Grade {student.grade_level}</div>
                     </div>
                   </div>
                 </td>

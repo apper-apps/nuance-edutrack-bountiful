@@ -60,7 +60,7 @@ const Grades = () => {
     setSelectedGrade(null);
     setSelectedStudent(student);
     setFormData({
-      studentId: student ? student.Id : "",
+studentId: student ? student.Id : "",
       subject: "",
       score: "",
       maxScore: "100",
@@ -75,11 +75,11 @@ const Grades = () => {
     setSelectedGrade(grade);
     setSelectedStudent(null);
     setFormData({
-      studentId: grade.studentId,
+studentId: grade.student_id,
       subject: grade.subject,
-      score: grade.score.toString(),
-      maxScore: grade.maxScore.toString(),
-      gradeType: grade.gradeType,
+score: grade.score.toString(),
+      maxScore: grade.max_score.toString(),
+      gradeType: grade.grade_type,
       semester: grade.semester,
       date: new Date(grade.date).toISOString().split('T')[0]
     });
@@ -104,9 +104,13 @@ const Grades = () => {
     try {
       const gradeData = {
         ...formData,
-        studentId: parseInt(formData.studentId),
+studentId: parseInt(formData.studentId),
         score: parseFloat(formData.score),
-        maxScore: parseFloat(formData.maxScore)
+        maxScore: parseFloat(formData.maxScore),
+        subject: formData.subject,
+        gradeType: formData.gradeType,
+        semester: formData.semester,
+        date: formData.date
       };
 
       if (selectedGrade) {
@@ -205,8 +209,8 @@ const Grades = () => {
           >
             <option value="">Select Student</option>
             {students.map(student => (
-              <option key={student.Id} value={student.Id}>
-                {student.name} - Grade {student.gradeLevel}
+<option key={student.Id} value={student.Id}>
+                {student.Name} - Grade {student.grade_level}
               </option>
             ))}
           </FormField>

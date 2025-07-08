@@ -19,9 +19,21 @@ const StudentTable = ({ students, onEdit, onDelete, onView }) => {
     }
   };
 
-  const sortedStudents = [...students].sort((a, b) => {
-    const aValue = a[sortField];
-    const bValue = b[sortField];
+const sortedStudents = [...students].sort((a, b) => {
+    let aValue = a[sortField];
+    let bValue = b[sortField];
+    
+    // Handle database field name mappings
+    if (sortField === "name") {
+      aValue = a.Name;
+      bValue = b.Name;
+    } else if (sortField === "gradeLevel") {
+      aValue = a.grade_level;
+      bValue = b.grade_level;
+    } else if (sortField === "enrollmentDate") {
+      aValue = a.enrollment_date;
+      bValue = b.enrollment_date;
+    }
     
     if (sortDirection === "asc") {
       return aValue > bValue ? 1 : -1;
@@ -54,7 +66,7 @@ const StudentTable = ({ students, onEdit, onDelete, onView }) => {
               </th>
               <th className="px-6 py-4 text-left">
                 <button
-                  onClick={() => handleSort("gradeLevel")}
+onClick={() => handleSort("grade_level")}
                   className="flex items-center space-x-2 text-sm font-medium text-gray-700 hover:text-gray-900"
                 >
                   <span>Grade</span>
@@ -72,7 +84,7 @@ const StudentTable = ({ students, onEdit, onDelete, onView }) => {
               </th>
               <th className="px-6 py-4 text-left">
                 <button
-                  onClick={() => handleSort("enrollmentDate")}
+onClick={() => handleSort("enrollment_date")}
                   className="flex items-center space-x-2 text-sm font-medium text-gray-700 hover:text-gray-900"
                 >
                   <span>Enrollment</span>
@@ -101,25 +113,25 @@ const StudentTable = ({ students, onEdit, onDelete, onView }) => {
                     <div className="h-10 w-10 flex-shrink-0">
                       <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
                         <span className="text-sm font-medium text-white">
-                          {student.name.charAt(0)}
+{student.Name.charAt(0)}
                         </span>
                       </div>
                     </div>
                     <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">{student.name}</div>
+<div className="text-sm font-medium text-gray-900">{student.Name}</div>
                       <div className="text-sm text-gray-500">{student.email}</div>
                     </div>
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <span className="text-sm text-gray-900">{student.gradeLevel}</span>
+<span className="text-sm text-gray-900">{student.grade_level}</span>
                 </td>
                 <td className="px-6 py-4">
                   <span className="text-sm text-gray-900">{student.section}</span>
                 </td>
                 <td className="px-6 py-4">
                   <span className="text-sm text-gray-900">
-                    {format(new Date(student.enrollmentDate), "MMM dd, yyyy")}
+{format(new Date(student.enrollment_date), "MMM dd, yyyy")}
                   </span>
                 </td>
                 <td className="px-6 py-4">

@@ -53,8 +53,8 @@ const Classes = () => {
   }, []);
 
   const getClassStudentCount = (classItem) => {
-    return students.filter(s => 
-      s.gradeLevel === classItem.gradeLevel && 
+return students.filter(s => 
+      s.grade_level === classItem.grade_level &&
       s.section === classItem.section &&
       s.status === "active"
     ).length;
@@ -76,10 +76,10 @@ const Classes = () => {
     setSelectedClass(classItem);
     setFormData({
       name: classItem.name,
-      gradeLevel: classItem.gradeLevel.toString(),
+gradeLevel: classItem.grade_level.toString(),
       section: classItem.section,
       capacity: classItem.capacity.toString(),
-      teacherId: classItem.teacherId
+teacherId: classItem.teacher_id
     });
     setShowForm(true);
   };
@@ -101,9 +101,11 @@ const Classes = () => {
     
     try {
       const classData = {
-        ...formData,
+name: formData.name,
         gradeLevel: parseInt(formData.gradeLevel),
-        capacity: parseInt(formData.capacity)
+        section: formData.section,
+        capacity: parseInt(formData.capacity),
+        teacherId: formData.teacherId
       };
 
       if (selectedClass) {
@@ -201,8 +203,8 @@ const Classes = () => {
                           </div>
                           <div>
                             <h3 className="font-semibold text-gray-900">{classItem.name}</h3>
-                            <p className="text-sm text-gray-600">
-                              Grade {classItem.gradeLevel} - Section {classItem.section}
+<p className="text-sm text-gray-600">
+                              Grade {classItem.grade_level} - Section {classItem.section}
                             </p>
                           </div>
                         </div>
@@ -247,7 +249,7 @@ const Classes = () => {
                         <div className="pt-2 border-t border-gray-200">
                           <div className="flex items-center text-sm text-gray-600">
                             <ApperIcon name="User" className="h-4 w-4 mr-2" />
-                            Teacher: {classItem.teacherId || "Not assigned"}
+Teacher: {classItem.teacher_id || "Not assigned"}
                           </div>
                         </div>
                       </div>
