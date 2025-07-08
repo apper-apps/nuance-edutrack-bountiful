@@ -1,0 +1,102 @@
+[
+  {
+    "Id": 1,
+    "studentId": 1,
+    "subject": "Mathematics",
+    "score": 85,
+    "maxScore": 100,
+    "gradeType": "test",
+    "semester": "Fall 2024",
+    "date": "2024-01-20"
+  },
+  {
+    "Id": 2,
+    "studentId": 1,
+    "subject": "Science",
+    "score": 92,
+    "maxScore": 100,
+    "gradeType": "quiz",
+    "semester": "Fall 2024",
+    "date": "2024-01-22"
+  },
+  {
+    "Id": 3,
+    "studentId": 1,
+    "subject": "English",
+    "score": 78,
+    "maxScore": 100,
+    "gradeType": "assignment",
+    "semester": "Fall 2024",
+    "date": "2024-01-25"
+  },
+  {
+    "Id": 4,
+    "studentId": 2,
+    "subject": "Mathematics",
+    "score": 76,
+    "maxScore": 100,
+    "gradeType": "test",
+    "semester": "Fall 2024",
+    "date": "2024-01-20"
+  },
+  {
+    "Id": 5,
+    "studentId": 2,
+    "subject": "Science",
+    "score": 88,
+    "maxScore": 100,
+    "gradeType": "quiz",
+    "semester": "Fall 2024",
+    "date": "2024-01-22"
+  },
+  {
+    "Id": 6,
+    "studentId": 3,
+    "subject": "History",
+    "score": 94,
+    "maxScore": 100,
+    "gradeType": "essay",
+    "semester": "Fall 2024",
+    "date": "2024-01-18"
+  },
+  {
+    "Id": 7,
+    "studentId": 3,
+    "subject": "English",
+    "score": 89,
+    "maxScore": 100,
+    "gradeType": "test",
+    "semester": "Fall 2024",
+    "date": "2024-01-25"
+  },
+  {
+    "Id": 8,
+    "studentId": 4,
+    "subject": "Mathematics",
+    "score": 82,
+    "maxScore": 100,
+    "gradeType": "test",
+    "semester": "Fall 2024",
+    "date": "2024-01-20"
+  },
+  {
+    "Id": 9,
+    "studentId": 4,
+    "subject": "Geography",
+    "score": 87,
+    "maxScore": 100,
+    "gradeType": "project",
+    "semester": "Fall 2024",
+    "date": "2024-01-28"
+  },
+  {
+    "Id": 10,
+    "studentId": 5,
+    "subject": "Science",
+    "score": 91,
+    "maxScore": 100,
+    "gradeType": "lab",
+    "semester": "Fall 2024",
+    "date": "2024-01-30"
+  }
+]

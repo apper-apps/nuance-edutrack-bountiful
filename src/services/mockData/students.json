@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 1,
+    "name": "Emma Johnson",
+    "email": "emma.johnson@email.com",
+    "phone": "+1 (555) 123-4567",
+    "gradeLevel": 10,
+    "section": "A",
+    "enrollmentDate": "2024-01-15",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "name": "Michael Chen",
+    "email": "michael.chen@email.com",
+    "phone": "+1 (555) 234-5678",
+    "gradeLevel": 9,
+    "section": "B",
+    "enrollmentDate": "2024-01-20",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "name": "Sarah Williams",
+    "email": "sarah.williams@email.com",
+    "phone": "+1 (555) 345-6789",
+    "gradeLevel": 11,
+    "section": "A",
+    "enrollmentDate": "2024-01-10",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 4,
+    "name": "David Rodriguez",
+    "email": "david.rodriguez@email.com",
+    "phone": "+1 (555) 456-7890",
+    "gradeLevel": 10,
+    "section": "C",
+    "enrollmentDate": "2024-01-25",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 5,
+    "name": "Jessica Taylor",
+    "email": "jessica.taylor@email.com",
+    "phone": "+1 (555) 567-8901",
+    "gradeLevel": 9,
+    "section": "A",
+    "enrollmentDate": "2024-02-01",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 6,
+    "name": "Ryan Anderson",
+    "email": "ryan.anderson@email.com",
+    "phone": "+1 (555) 678-9012",
+    "gradeLevel": 11,
+    "section": "B",
+    "enrollmentDate": "2024-01-12",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 7,
+    "name": "Amanda Brown",
+    "email": "amanda.brown@email.com",
+    "phone": "+1 (555) 789-0123",
+    "gradeLevel": 10,
+    "section": "A",
+    "enrollmentDate": "2024-01-18",
+    "photoUrl": "",
+    "status": "inactive"
+  },
+  {
+    "Id": 8,
+    "name": "Kevin Miller",
+    "email": "kevin.miller@email.com",
+    "phone": "+1 (555) 890-1234",
+    "gradeLevel": 9,
+    "section": "C",
+    "enrollmentDate": "2024-02-05",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 9,
+    "name": "Lisa Garcia",
+    "email": "lisa.garcia@email.com",
+    "phone": "+1 (555) 901-2345",
+    "gradeLevel": 11,
+    "section": "A",
+    "enrollmentDate": "2024-01-08",
+    "photoUrl": "",
+    "status": "active"
+  },
+  {
+    "Id": 10,
+    "name": "James Wilson",
+    "email": "james.wilson@email.com",
+    "phone": "+1 (555) 012-3456",
+    "gradeLevel": 10,
+    "section": "B",
+    "enrollmentDate": "2024-01-22",
+    "photoUrl": "",
+    "status": "active"
+  }
+]

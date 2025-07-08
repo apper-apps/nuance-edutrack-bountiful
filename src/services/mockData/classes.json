@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "name": "Mathematics 10A",
+    "gradeLevel": 10,
+    "section": "A",
+    "capacity": 30,
+    "teacherId": "teacher1"
+  },
+  {
+    "Id": 2,
+    "name": "Science 9B",
+    "gradeLevel": 9,
+    "section": "B",
+    "capacity": 25,
+    "teacherId": "teacher2"
+  },
+  {
+    "Id": 3,
+    "name": "English 11A",
+    "gradeLevel": 11,
+    "section": "A",
+    "capacity": 28,
+    "teacherId": "teacher3"
+  },
+  {
+    "Id": 4,
+    "name": "History 10C",
+    "gradeLevel": 10,
+    "section": "C",
+    "capacity": 32,
+    "teacherId": "teacher4"
+  },
+  {
+    "Id": 5,
+    "name": "Geography 9A",
+    "gradeLevel": 9,
+    "section": "A",
+    "capacity": 26,
+    "teacherId": "teacher5"
+  },
+  {
+    "Id": 6,
+    "name": "Art 11B",
+    "gradeLevel": 11,
+    "section": "B",
+    "capacity": 20,
+    "teacherId": "teacher6"
+  }
+]

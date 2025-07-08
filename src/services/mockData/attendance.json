@@ -1,0 +1,107 @@
+[
+  {
+    "Id": 1,
+    "studentId": 1,
+    "date": "2024-01-15",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 2,
+    "studentId": 1,
+    "date": "2024-01-16",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 3,
+    "studentId": 1,
+    "date": "2024-01-17",
+    "status": "late",
+    "reason": "Traffic delay"
+  },
+  {
+    "Id": 4,
+    "studentId": 2,
+    "date": "2024-01-15",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 5,
+    "studentId": 2,
+    "date": "2024-01-16",
+    "status": "absent",
+    "reason": "Illness"
+  },
+  {
+    "Id": 6,
+    "studentId": 2,
+    "date": "2024-01-17",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 7,
+    "studentId": 3,
+    "date": "2024-01-15",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 8,
+    "studentId": 3,
+    "date": "2024-01-16",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 9,
+    "studentId": 3,
+    "date": "2024-01-17",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 10,
+    "studentId": 4,
+    "date": "2024-01-15",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 11,
+    "studentId": 4,
+    "date": "2024-01-16",
+    "status": "late",
+    "reason": "Doctor appointment"
+  },
+  {
+    "Id": 12,
+    "studentId": 4,
+    "date": "2024-01-17",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 13,
+    "studentId": 5,
+    "date": "2024-01-15",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 14,
+    "studentId": 5,
+    "date": "2024-01-16",
+    "status": "present",
+    "reason": ""
+  },
+  {
+    "Id": 15,
+    "studentId": 5,
+    "date": "2024-01-17",
+    "status": "absent",
+    "reason": "Family emergency"
+  }
+]
